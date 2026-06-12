@@ -90,7 +90,7 @@ h1 { margin: 0; max-width: 720px; font-size: clamp(3.5rem, 7vw, 6.5rem); line-he
 .pipeline-footer code { color: var(--accent); }
 .float-chip { position: absolute; z-index: 3; padding: 12px 16px; background: var(--text); color: var(--bg); border-radius: 12px; box-shadow: var(--shadow); font: 500 1rem "DM Mono"; animation: float 4s ease-in-out infinite; }
 .float-chip span { display: block; font: 500 .58rem "Manrope"; opacity: .65; }
-.chip-one { left: -5px; top: 23%; transform: rotate(-5deg); }
+.chip-one { left: -35px; top: 23%; transform: rotate(-5deg); }
 .chip-two { right: -8px; bottom: 19%; transform: rotate(5deg); animation-delay: -2s; }
 @keyframes float { 50% { translate: 0 -10px; } }
 
@@ -229,7 +229,7 @@ h1 { margin: 0; max-width: 720px; font-size: clamp(3.5rem, 7vw, 6.5rem); line-he
   .pipeline-node { width: 72%; }
   .pipeline-flow { inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); }
   .float-chip { font-size: .8rem; }
-  .chip-one { left: -5px; top: 10%; }
+  .chip-one { left: -18px; top: 10%; }
   .chip-two { right: -3px; bottom: 7%; }
   .section { padding-block: 90px; }
   .section-heading { margin-bottom: 48px; }
