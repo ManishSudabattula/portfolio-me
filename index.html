@@ -52,7 +52,7 @@
           </div>
           <div class="hero-meta" aria-label="Highlights">
             <div><strong>3</strong><span>Cloud platforms</span></div>
-            <div><strong>2</strong><span>Featured studies</span></div>
+            <div><strong>5</strong><span>Projects & prototypes</span></div>
             <div><strong>∞</strong><span>Curiosity</span></div>
           </div>
         </div>
@@ -149,13 +149,25 @@
           </div>
 
           <div class="lab-heading reveal">
-            <div><p class="eyebrow">Next experiments</p><h3>Currently on the build roadmap</h3></div>
-            <p>Project concepts designed to deepen the bridge between data platforms and AI. These are ideas in development, not completed case studies.</p>
+            <div><p class="eyebrow">AI + Data Product Lab</p><h3>Research translated into working systems</h3></div>
+            <p>Interactive prototypes built around documented infrastructure problems. Each includes an explainable demo, system architecture, evaluation logic, and primary research sources.</p>
           </div>
-          <div class="lab-grid">
-            <article class="lab-card reveal" data-category="ai data"><span class="lab-number">A</span><div class="lab-icon">⌁</div><h4>RAG Quality Observatory</h4><p>Evaluate retrieval quality, hallucination risk, latency, and cost across a production-style RAG pipeline.</p><div class="tags"><span>LangChain</span><span>BigQuery</span><span>Airflow</span></div></article>
-            <article class="lab-card reveal" data-category="data"><span class="lab-number">B</span><div class="lab-icon">⌗</div><h4>Streaming Anomaly Radar</h4><p>Detect unusual events in real time with Kafka, Spark Structured Streaming, and explainable alerts.</p><div class="tags"><span>Kafka</span><span>Spark</span><span>MLflow</span></div></article>
-            <article class="lab-card reveal" data-category="ai"><span class="lab-number">C</span><div class="lab-icon">◫</div><h4>Natural Language Data Catalog</h4><p>Turn lineage and metadata into a conversational discovery layer with governed text-to-SQL.</p><div class="tags"><span>LLM</span><span>dbt</span><span>DataHub</span></div></article>
+          <div class="lab-grid product-lab">
+            <a class="lab-card reveal" data-category="ai data" href="projects/evidence-grid/index.html">
+              <span class="lab-number">03 / LIVE</span><div class="lab-signal evidence-signal"><i></i><i></i><i></i><b>92%</b></div>
+              <h4>EvidenceGrid</h4><p>A release gate for RAG systems that audits claim support, retrieval relevance, latency, and cost before an AI answer ships.</p>
+              <div class="lab-footer"><div class="tags"><span>RAG</span><span>Evaluation</span><span>Prompting</span></div><span>Open demo ↗</span></div>
+            </a>
+            <a class="lab-card reveal" data-category="ai data" href="projects/lineage-guard/index.html">
+              <span class="lab-number">04 / LIVE</span><div class="lab-signal lineage-signal"><i></i><i></i><i></i><i></i><b>7 assets</b></div>
+              <h4>LineageGuard</h4><p>An AI-assisted schema-change control plane that finds downstream breakage and generates a safe migration plan before merge.</p>
+              <div class="lab-footer"><div class="tags"><span>Lineage</span><span>Contracts</span><span>Copilot</span></div><span>Open demo ↗</span></div>
+            </a>
+            <a class="lab-card reveal" data-category="ai data" href="projects/carbon-shift/index.html">
+              <span class="lab-number">05 / LIVE</span><div class="lab-signal carbon-signal"><i style="--h:72%"></i><i style="--h:50%"></i><i style="--h:28%"></i><i style="--h:35%"></i><i style="--h:64%"></i><b>-56% CO2</b></div>
+              <h4>CarbonShift</h4><p>A carbon-, cost-, and deadline-aware scheduler that moves flexible AI workloads into cleaner grid windows.</p>
+              <div class="lab-footer"><div class="tags"><span>Optimization</span><span>Energy Data</span><span>MLOps</span></div><span>Open demo ↗</span></div>
+            </a>
           </div>
         </div>
       </section>

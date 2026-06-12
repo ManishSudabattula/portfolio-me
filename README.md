@@ -19,5 +19,12 @@ In the repository settings, open **Pages**, choose **Deploy from a branch**, sel
 - `index.html` - content and semantic page structure
 - `styles.css` - responsive visual system and animation
 - `script.js` - theme, filtering, navigation, and reveal interactions
+- `projects/` - three research-backed interactive AI + data product prototypes
 
-The project roadmap section is intentionally labeled as work in development. Only completed academic projects are presented as case studies.
+## AI + Data Product Lab
+
+- **EvidenceGrid** - claim-level RAG evaluation and release gating
+- **LineageGuard** - schema-change impact analysis using contracts and lineage
+- **CarbonShift** - carbon-, cost-, and deadline-aware AI workload scheduling
+
+Each prototype is dependency-free and includes links to the primary research or standards that motivated the product design. See [`projects/README.md`](projects/README.md) for scope and architecture notes.

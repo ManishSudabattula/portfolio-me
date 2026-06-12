@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LineageGuard: AI-assisted data contract and schema impact analysis." />
+  <title>LineageGuard | Schema Change Control Plane</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../project.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <nav class="project-nav shell"><a class="back-link" href="../../index.html#projects"><- Portfolio</a><a class="brand" href="#top">Lineage<i>Guard</i></a><a class="repo-link" href="https://github.com/ManishSudabattula/portfolio-me/tree/master/projects/lineage-guard" target="_blank" rel="noreferrer">View source -></a></nav>
+  <main id="top">
+    <header class="hero shell"><div><p class="eyebrow">AI-assisted data reliability</p><h1>Know the blast radius first.</h1><p class="hero-copy">A change-control layer that combines schema diffs, column-level lineage, data contracts, and an explainable migration plan before a risky warehouse change reaches production.</p></div><div class="hero-meta"><div><strong>column</strong><span>level lineage</span></div><div><strong>pre-merge</strong><span>impact analysis</span></div><div><strong>policy</strong><span>aware risk score</span></div><div><strong>AI</strong><span>migration copilot</span></div></div></header>
+    <section class="problem-strip"><div class="problem-inner shell"><strong>The problem</strong><p>A small schema edit can silently break dashboards, features, and downstream contracts. OpenLineage provides the dependency primitives; LineageGuard turns them into a pre-deployment decision with owners, severity, and a repair plan.</p></div></section>
+    <section class="workspace shell">
+      <div class="workspace-title"><div><p class="eyebrow">Interactive prototype</p><h2>Simulate a schema change.</h2></div><p>Select a proposed change. The engine traverses a local column-lineage graph, tests contracts, scores downstream impact, and generates a safe rollout sequence.</p></div>
+      <div class="app-shell"><div class="app-bar"><span>lineage-guard / pull-request-184</span><span class="live">lineage snapshot loaded</span></div><div class="app-grid">
+        <aside class="controls">
+          <div class="control-group"><label for="change">Proposed warehouse change</label><select id="change"><option value="rename">Rename orders.customer_id</option><option value="type">Change payments.amount to INTEGER</option><option value="drop">Drop customers.region</option><option value="add">Add orders.risk_score</option></select></div>
+          <div class="control-group"><span class="control-title">Deployment environment</span><div class="toggle-row"><button class="secondary-button environment active" data-environment="production">Production</button><button class="secondary-button environment" data-environment="staging">Staging</button></div></div>
+          <div class="control-group"><label for="traffic">Current business traffic: <b id="traffic-value">82%</b></label><input id="traffic" type="range" min="20" max="100" value="82" /><div class="range-line"><span>quiet</span><span>peak</span></div></div>
+          <div class="control-group"><label for="window">Migration window</label><select id="window"><option value="now">Deploy now</option><option value="offpeak">Next off-peak window</option><option value="dual">Dual-write migration</option></select></div>
+          <button id="analyze" class="primary-button">Analyze blast radius</button>
+        </aside>
+        <section class="results" aria-live="polite">
+          <div class="metric-grid"><div class="metric bad"><span>Risk score</span><strong id="risk">--</strong></div><div class="metric warn"><span>Assets impacted</span><strong id="assets">--</strong></div><div class="metric"><span>Owners to notify</span><strong id="owners">--</strong></div><div class="metric"><span>Est. migration</span><strong id="duration">--</strong></div></div>
+          <div class="panel"><div class="panel-head"><h3>Decision</h3><span id="decision" class="pill">not analyzed</span></div><div id="summary" class="explanation">Run impact analysis to evaluate the proposed change.</div></div>
+          <div class="panel"><div class="panel-head"><h3>Impacted lineage</h3><span>ordered by severity</span></div><div id="impacts" class="impact-list"><div class="empty">No impact graph traversed yet.</div></div></div>
+          <div class="panel"><div class="panel-head"><h3>Copilot migration plan</h3><span>generated from contracts + lineage</span></div><div id="plan" class="code-block">Waiting for analysis...</div></div>
+        </section>
+      </div></div>
+    </section>
+    <section class="architecture"><div class="shell"><p class="eyebrow">System design</p><h2>Move reliability left.</h2><div class="architecture-grid"><article class="arch-card"><span>01 / INGEST</span><h3>Unify metadata</h3><p>Collect schema facets, run events, ownership, SLAs, and column transformations from orchestration and warehouse systems.</p></article><article class="arch-card"><span>02 / TRAVERSE</span><h3>Compute impact</h3><p>Walk downstream column dependencies and weight each asset by criticality, usage, freshness, and contract severity.</p></article><article class="arch-card"><span>03 / REASON</span><h3>Explain the change</h3><p>Ground an AI copilot in the exact diff and graph so its migration plan is constrained by real dependencies.</p></article><article class="arch-card"><span>04 / ENFORCE</span><h3>Gate deployment</h3><p>Post the decision to CI, require owner approval for critical assets, and verify compatibility during rollout.</p></article></div></div></section>
+    <section class="research"><div class="research-grid shell"><div><p class="eyebrow">Research basis</p><h2>Lineage becomes actionable.</h2></div><div class="research-list"><a href="https://openlineage.io/docs/spec/object-model/" target="_blank" rel="noreferrer">OpenLineage object model - datasets, jobs, runs, and metadata events -></a><a href="https://openlineage.io/docs/spec/facets/dataset-facets/column_lineage_facet/" target="_blank" rel="noreferrer">OpenLineage column-level lineage - fine-grained input/output dependencies -></a><a href="https://openlineage.io/docs/spec/facets/dataset-facets/schema/" target="_blank" rel="noreferrer">OpenLineage schema facet - field names, types, descriptions, and nested fields -></a></div></div></section>
+  </main>
+  <footer class="project-footer shell"><span>Concept and prototype by Manish Sudabattula</span><a href="../carbon-shift/index.html">Next: CarbonShift -></a></footer>
+</body>
+</html>

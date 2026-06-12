@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CarbonShift: carbon-, cost-, and deadline-aware scheduling for AI workloads." />
+  <title>CarbonShift | Sustainable AI Scheduler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../project.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <nav class="project-nav shell"><a class="back-link" href="../../index.html#projects"><- Portfolio</a><a class="brand" href="#top">Carbon<i>Shift</i></a><a class="repo-link" href="https://github.com/ManishSudabattula/portfolio-me/tree/master/projects/carbon-shift" target="_blank" rel="noreferrer">View source -></a></nav>
+  <main id="top">
+    <header class="hero shell"><div><p class="eyebrow">Carbon-aware AI operations</p><h1>Run AI when the grid is ready.</h1><p class="hero-copy">A scheduler for flexible AI workloads that balances deadline, electricity cost, and grid carbon intensity. CarbonShift makes the optimization visible instead of hiding sustainability behind an annual estimate.</p></div><div class="hero-meta"><div><strong>hourly</strong><span>grid-aware planning</span></div><div><strong>3-way</strong><span>objective function</span></div><div><strong>deadline</strong><span>hard constraints</span></div><div><strong>delta</strong><span>vs. immediate run</span></div></div></header>
+    <section class="problem-strip"><div class="problem-inner shell"><strong>The problem</strong><p>The IEA projects data-centre electricity consumption to more than double by 2030, with AI a major driver. Many evaluations, fine-tunes, and batch inference jobs are flexible enough to shift, but schedulers rarely optimize for carbon, price, and delivery together.</p></div></section>
+    <section class="workspace shell">
+      <div class="workspace-title"><div><p class="eyebrow">Interactive prototype</p><h2>Schedule the workload.</h2></div><p>Configure an AI job and choose priorities. The planner scores hourly windows against carbon intensity, electricity price, forecast confidence, and the deadline.</p></div>
+      <div class="app-shell"><div class="app-bar"><span>carbon-shift / us-east forecast</span><span class="live">24h signal available</span></div><div class="app-grid">
+        <aside class="controls">
+          <div class="control-group"><label for="workload">AI workload</label><select id="workload"><option value="eval">RAG evaluation batch</option><option value="inference">Document inference queue</option><option value="finetune">Small-model fine-tune</option></select></div>
+          <div class="control-group"><label for="duration">Runtime: <b id="duration-value">3h</b></label><input id="duration" type="range" min="1" max="8" value="3" /><div class="range-line"><span>1 hour</span><span>8 hours</span></div></div>
+          <div class="control-group"><label for="deadline">Complete within</label><select id="deadline"><option value="8">8 hours</option><option value="12">12 hours</option><option value="24" selected>24 hours</option></select></div>
+          <div class="control-group"><label for="carbon">Carbon priority: <b id="carbon-value">60%</b></label><input id="carbon" type="range" min="0" max="100" value="60" /></div>
+          <div class="control-group"><label for="cost">Cost priority: <b id="cost-value">30%</b></label><input id="cost" type="range" min="0" max="100" value="30" /></div>
+          <button id="optimize" class="primary-button">Optimize schedule</button>
+        </aside>
+        <section class="results" aria-live="polite">
+          <div class="metric-grid"><div class="metric good"><span>CO2 reduction</span><strong id="co2-reduction">--</strong></div><div class="metric good"><span>Cost reduction</span><strong id="cost-reduction">--</strong></div><div class="metric"><span>Recommended start</span><strong id="start">--</strong></div><div class="metric"><span>Deadline buffer</span><strong id="buffer">--</strong></div></div>
+          <div class="panel"><div class="panel-head"><h3>24-hour grid forecast</h3><span>carbon gCO2/kWh + price index</span></div><div class="table-wrap"><table><thead><tr><th>Hour</th><th>Carbon</th><th>Price</th><th>Forecast</th><th>Decision</th></tr></thead><tbody id="forecast"></tbody></table></div></div>
+          <div class="panel"><div class="panel-head"><h3>Optimized run plan</h3><span id="plan-status" class="pill">waiting</span></div><div id="schedule" class="schedule-list"></div></div>
+          <div class="panel"><div class="panel-head"><h3>Why this window?</h3><span>explainable optimizer</span></div><div id="explanation" class="explanation">Run the optimizer to compare feasible windows.</div></div>
+        </section>
+      </div></div>
+    </section>
+    <section class="architecture"><div class="shell"><p class="eyebrow">System design</p><h2>Make compute demand responsive.</h2><div class="architecture-grid"><article class="arch-card"><span>01 / OBSERVE</span><h3>Forecast the signals</h3><p>Ingest hourly carbon intensity, regional price, renewable share, weather, and confidence for each compute region.</p></article><article class="arch-card"><span>02 / CLASSIFY</span><h3>Know job flexibility</h3><p>Tag workloads with runtime, GPU shape, deadline, checkpoint support, data residency, and interruption tolerance.</p></article><article class="arch-card"><span>03 / OPTIMIZE</span><h3>Score feasible windows</h3><p>Minimize weighted carbon and cost while enforcing deadline, capacity, location, and forecast-confidence constraints.</p></article><article class="arch-card"><span>04 / VERIFY</span><h3>Report actual impact</h3><p>Compare the completed run with an immediate baseline and publish energy, emissions, cost, and SLA deltas.</p></article></div></div></section>
+    <section class="research"><div class="research-grid shell"><div><p class="eyebrow">Research basis</p><h2>A fast-growing infrastructure constraint.</h2></div><div class="research-list"><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noreferrer">IEA Energy and AI - data-centre electricity demand and accelerated-server growth -></a><a href="https://www.iea.org/reports/energy-and-ai/executive-summary" target="_blank" rel="noreferrer">IEA executive summary - AI as a major driver of electricity-demand growth -></a></div></div></section>
+  </main>
+  <footer class="project-footer shell"><span>Concept and prototype by Manish Sudabattula</span><a href="../evidence-grid/index.html">Back to EvidenceGrid -></a></footer>
+</body>
+</html>

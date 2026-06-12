@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EvidenceGrid: an interactive RAG evaluation and evidence auditing prototype." />
+  <title>EvidenceGrid | RAG Evaluation Workbench</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../project.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <nav class="project-nav shell">
+    <a class="back-link" href="../../index.html#projects"><- Portfolio</a>
+    <a class="brand" href="#top">Evidence<i>Grid</i></a>
+    <a class="repo-link" href="https://github.com/ManishSudabattula/portfolio-me/tree/master/projects/evidence-grid" target="_blank" rel="noreferrer">View source -></a>
+  </nav>
+
+  <main id="top">
+    <header class="hero shell">
+      <div>
+        <p class="eyebrow">Trust infrastructure for RAG</p>
+        <h1>Evidence<br />before eloquence.</h1>
+        <p class="hero-copy">A release gate for retrieval-augmented AI. EvidenceGrid traces every answer back to retrieved context, scores unsupported claims, and exposes the quality-cost tradeoff of each prompt configuration.</p>
+      </div>
+      <div class="hero-meta">
+        <div><strong>4</strong><span>quality dimensions</span></div>
+        <div><strong>3</strong><span>retrieval strategies</span></div>
+        <div><strong>claim</strong><span>level evidence audit</span></div>
+        <div><strong>local</strong><span>explainable simulation</span></div>
+      </div>
+    </header>
+
+    <section class="problem-strip">
+      <div class="problem-inner shell"><strong>The problem</strong><p>Fluent answers can still be unsupported. NIST identifies confabulation as a generative-AI risk, while RAG research separates retrieval quality from answer faithfulness. Teams need an evaluation layer that tests both.</p></div>
+    </section>
+
+    <section class="workspace shell">
+      <div class="workspace-title"><div><p class="eyebrow">Interactive prototype</p><h2>Run an answer audit.</h2></div><p>Choose a scenario and tune retrieval. The prototype recalculates evidence coverage, relevance, latency, and estimated cost using transparent deterministic rules.</p></div>
+      <div class="app-shell">
+        <div class="app-bar"><span>evidence-grid / evaluation-run</span><span class="live">scenario engine online</span></div>
+        <div class="app-grid">
+          <aside class="controls">
+            <div class="control-group"><label for="scenario">Knowledge domain</label><select id="scenario"><option value="policy">AI governance policy</option><option value="incident">Data incident runbook</option><option value="energy">Energy research brief</option></select></div>
+            <div class="control-group"><label for="question">Evaluation question</label><textarea id="question">What controls should a team use before releasing a high-impact generative AI assistant?</textarea></div>
+            <div class="control-group"><span class="control-title">Retrieval strategy</span><div class="toggle-row"><button class="secondary-button strategy active" data-strategy="hybrid">Hybrid</button><button class="secondary-button strategy" data-strategy="vector">Vector</button><button class="secondary-button strategy" data-strategy="keyword">Keyword</button></div></div>
+            <div class="control-group"><label for="top-k">Retrieved passages: <b id="top-k-value">5</b></label><input id="top-k" type="range" min="2" max="8" value="5" /><div class="range-line"><span>focused</span><span>wide context</span></div></div>
+            <div class="control-group"><label for="strictness">Citation strictness: <b id="strictness-value">70%</b></label><input id="strictness" type="range" min="40" max="95" value="70" /><div class="range-line"><span>exploratory</span><span>release gate</span></div></div>
+            <button id="run" class="primary-button">Evaluate answer</button>
+          </aside>
+          <section class="results" aria-live="polite">
+            <div class="metric-grid">
+              <div class="metric good"><span>Faithfulness</span><strong id="faithfulness">--</strong></div>
+              <div class="metric good"><span>Context relevance</span><strong id="relevance">--</strong></div>
+              <div class="metric warn"><span>Latency</span><strong id="latency">--</strong></div>
+              <div class="metric"><span>Cost / 1K queries</span><strong id="cost">--</strong></div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Generated answer</h3><span id="release-status" class="pill">not evaluated</span></div>
+              <div id="answer" class="explanation">Run the evaluation to generate an answer and inspect its evidence chain.</div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Claim-to-source audit</h3><span id="claim-summary">0 claims</span></div>
+              <div id="claims" class="claim-list"><div class="empty">No claims scored yet.</div></div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Retrieved context</h3><span>ranked evidence</span></div>
+              <div id="sources" class="source-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="architecture"><div class="shell"><p class="eyebrow">System design</p><h2>Evaluation is part of the product.</h2><div class="architecture-grid">
+      <article class="arch-card"><span>01 / TRACE</span><h3>Capture the run</h3><p>Log query, prompt version, model, retrieved chunks, token usage, response, and timing as one immutable trace.</p></article>
+      <article class="arch-card"><span>02 / DECOMPOSE</span><h3>Extract atomic claims</h3><p>Break the answer into independently verifiable statements instead of assigning one vague score to a paragraph.</p></article>
+      <article class="arch-card"><span>03 / SCORE</span><h3>Measure the chain</h3><p>Evaluate retrieval relevance, claim support, answer relevance, latency, and cost with thresholded release policies.</p></article>
+      <article class="arch-card"><span>04 / LEARN</span><h3>Build failure datasets</h3><p>Route low-confidence traces into a reviewed benchmark that improves prompts, chunking, and retrieval over time.</p></article>
+    </div></div></section>
+
+    <section class="research"><div class="research-grid shell"><div><p class="eyebrow">Research basis</p><h2>Built from documented failure modes.</h2></div><div class="research-list"><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank" rel="noreferrer">NIST AI 600-1: Generative AI Profile - risk measurement, monitoring, and confabulation -></a><a href="https://arxiv.org/abs/2309.15217" target="_blank" rel="noreferrer">RAGAS - faithfulness, answer relevance, and context relevance for RAG evaluation -></a></div></div></section>
+  </main>
+  <footer class="project-footer shell"><span>Concept and prototype by Manish Sudabattula</span><a href="../lineage-guard/index.html">Next: LineageGuard -></a></footer>
+</body>
+</html>
