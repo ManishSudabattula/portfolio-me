@@ -77,15 +77,14 @@ h1 { margin: 0; max-width: 720px; font-size: clamp(3.5rem, 7vw, 6.5rem); line-he
 .window-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); opacity: .45; }
 .pipeline-canvas { min-height: 390px; padding: 32px; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
 .pipeline-node { width: 61%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface-2); position: relative; z-index: 2; box-shadow: 0 12px 30px rgba(0,0,0,.12); }
-.pipeline-node:nth-of-type(3) { align-self: flex-end; }
+.pipeline-node.transform { align-self: flex-end; }
 .pipeline-node small, .pipeline-node span { display: block; color: var(--muted); font: .57rem "DM Mono"; letter-spacing: .05em; }
 .pipeline-node strong { display: block; margin: 4px 0 3px; font-size: .88rem; }
 .pipeline-node.intelligence { border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
-.pipeline-line { position: absolute; z-index: 1; height: 78px; width: 44%; border: 1px dashed color-mix(in srgb, var(--accent) 45%, transparent); }
-.pipeline-line i { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); animation: travel 2.4s linear infinite; }
-.line-one { left: 38%; top: 104px; border-left: 0; border-bottom: 0; border-radius: 0 18px 0 0; }
-.line-two { right: 38%; top: 230px; border-right: 0; border-bottom: 0; border-radius: 18px 0 0; }
-@keyframes travel { 0% { left: 0; top: -4px; } 55% { left: calc(100% - 4px); top: -4px; } 100% { left: calc(100% - 4px); top: calc(100% - 4px); } }
+.pipeline-flow { position: absolute; z-index: 1; inset: 32px; width: calc(100% - 64px); height: calc(100% - 64px); overflow: visible; }
+.pipeline-flow path { fill: none; stroke: color-mix(in srgb, var(--accent) 48%, transparent); stroke-width: .45; stroke-dasharray: 2 2; vector-effect: non-scaling-stroke; }
+.pipeline-flow .flow-dot { fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)); }
+.pipeline-flow .flow-dot.second { fill: var(--accent-2); }
 .pipeline-footer { border-top: 1px solid var(--line); border-bottom: 0; }
 .pipeline-footer .status-dot { width: 5px; height: 5px; margin-right: 5px; }
 .pipeline-footer code { color: var(--accent); }
@@ -228,7 +227,7 @@ h1 { margin: 0; max-width: 720px; font-size: clamp(3.5rem, 7vw, 6.5rem); line-he
   .hero-visual { min-height: 470px; }
   .pipeline-canvas { min-height: 330px; padding: 24px; }
   .pipeline-node { width: 72%; }
-  .pipeline-line { width: 34%; }
+  .pipeline-flow { inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); }
   .float-chip { font-size: .8rem; }
   .chip-one { left: -5px; top: 10%; }
   .chip-two { right: -3px; bottom: 7%; }
