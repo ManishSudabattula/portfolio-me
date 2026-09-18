@@ -26,7 +26,7 @@
   <text x="120" y="75" fill="#EEF8F3" font-family="Arial, sans-serif" font-size="18" font-weight="700">Manish Sudabattula</text>
   <circle cx="72" cy="125" r="5" fill="#73F2B5"/>
   <circle cx="72" cy="125" r="11" fill="#73F2B5" fill-opacity="0.12"/>
-  <text x="92" y="130" fill="#73F2B5" font-family="monospace" font-size="12" letter-spacing="2">DATA ENGINEER · AI BUILDER</text>
+  <text x="92" y="130" fill="#73F2B5" font-family="monospace" font-size="12" letter-spacing="2">AI ENGINEER · AI BUILDER</text>
 
   <text x="66" y="210" fill="#EEF8F3" font-family="Arial, sans-serif" font-size="55" font-weight="700" letter-spacing="-2">Systems built from data.</text>
   <text x="66" y="272" fill="url(#accent)" font-family="Arial, sans-serif" font-size="55" font-weight="700" letter-spacing="-2">Intelligence built with evidence.</text>
