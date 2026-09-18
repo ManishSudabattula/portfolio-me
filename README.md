@@ -1,10 +1,10 @@
 <div align="center">
 
-![Manish Sudabattula - Data Engineer and AI Builder](assets/readme-hero.svg)
+![Manish Sudabattula - AI Engineer and AI Systems Builder](assets/readme-hero.svg)
 
-# Portfolio · AI + Data Product Lab
+# Portfolio · AI Systems & Product Lab
 
-**Reliable data systems. Evidence-grounded AI. Interactive product thinking.**
+**Agentic systems. Evidence-grounded AI. Production-minded engineering.**
 
 [![Live Portfolio](https://img.shields.io/badge/VIEW_LIVE_PORTFOLIO-73F2B5?style=for-the-badge&logo=githubpages&logoColor=07110F)](https://manishsudabattula.github.io/portfolio-me/)
 [![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manishsudabattula02)
@@ -16,7 +16,7 @@
 
 ## What This Repository Is
 
-This is more than a personal landing page. It is a dependency-free, GitHub Pages-ready portfolio combining my background in **cloud data engineering** with a growing lab of **research-backed AI + data products**.
+This is more than a personal landing page. It is a dependency-free, GitHub Pages-ready portfolio focused on **AI engineering**, combining agentic systems, RAG, applied machine learning, evaluation, safety, and the cloud/data infrastructure required to run them reliably.
 
 The work focuses on a practical question:
 
@@ -24,7 +24,7 @@ The work focuses on a practical question:
 
 The portfolio answers that through interactive prototypes, transparent scoring logic, system architecture, and links to the standards or research behind each design.
 
-## Product Lab
+## AI Product Lab
 
 <table>
   <tr>
@@ -88,12 +88,13 @@ My preferred systems are:
 
 | Layer | Technologies |
 |---|---|
-| **Languages** | Python, SQL, PL/SQL, Java, JavaScript |
-| **Data systems** | Apache Spark, PySpark, Kafka, dbt, Apache Airflow |
-| **Warehouses** | Snowflake, BigQuery, Azure Synapse, Databricks, PostgreSQL, Redshift |
-| **Cloud** | GCP, AWS, Azure |
-| **Quality & operations** | Great Expectations, data contracts, observability, GitHub Actions, Docker, Terraform |
-| **Applied AI** | TensorFlow, Hugging Face, Scikit-learn, NetworkX, RAG evaluation |
+| **Agentic AI & LLM Systems** | LangGraph, LangChain, tool calling, multi-step workflows, memory, orchestration, guardrails |
+| **RAG & Evaluation** | Retrieval pipelines, embeddings, vector search, grounding, hallucination checks, prompt evaluation, RAG evaluation |
+| **Machine Learning & NLP** | PyTorch, TensorFlow, Hugging Face, Scikit-learn, Transformers, fine-tuning, NLP |
+| **AI Application Engineering** | Python, FastAPI, REST APIs, structured outputs, async workflows, Playwright, Pydantic |
+| **MLOps & Observability** | Docker, GitHub Actions, CI/CD, evaluation pipelines, logging, tracing, model monitoring |
+| **Cloud & Data Infrastructure** | AWS, GCP, Azure, Spark, Kafka, BigQuery, Snowflake, Airflow, dbt |
+| **Security & Reliability** | RBAC, secrets management, prompt safety, audit trails, idempotency, validation |
 
 ## Design & Implementation
 
@@ -135,10 +136,10 @@ The product-lab demos use deterministic local scenarios so the decision logic re
 
 <div align="center">
 
-### Have a difficult data problem?
+### Have a difficult AI problem?
 
 [Start a conversation](mailto:sudabattulam@gmail.com) · [Explore the portfolio](https://manishsudabattula.github.io/portfolio-me/) · [Connect on LinkedIn](https://www.linkedin.com/in/manishsudabattula02)
 
-<sub>Designed for data. Built with intent.</sub>
+<sub>Designed for intelligence. Built with intent.</sub>
 
 </div>
