@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Agentic Job Intelligence Platform by Manish Sudabattula — LLM-assisted job extraction, browser automation, persistence, and cryptographic audit trails." />
+  <meta name="theme-color" content="#07110f" />
+  <title>Agentic Job Intelligence | Manish Sudabattula</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+  <nav class="project-nav shell">
+    <a class="back-link" href="../../index.html#projects">← Back to portfolio</a>
+    <a class="brand" href="../../index.html">Manish<i>.</i></a>
+    <a class="repo-link" href="https://github.com/ManishSudabattula/easyapplyai" target="_blank" rel="noreferrer">View source ↗</a>
+  </nav>
+
+  <header class="hero shell">
+    <div>
+      <p class="eyebrow">Agentic AI · Browser Automation · LLM Extraction</p>
+      <h1>Agentic Job Intelligence</h1>
+      <p class="hero-copy">
+        A local-first AI automation system that navigates job pages, detects platform structure,
+        extracts normalized job data with LLM assistance, persists artifacts, and creates a
+        tamper-evident audit trail for every run.
+      </p>
+    </div>
+    <div class="hero-meta">
+      <div><strong>4</strong><span>platform modes: LinkedIn, Lever, Greenhouse, generic</span></div>
+      <div><strong>SHA-256</strong><span>artifact integrity + hash-chained audit events</span></div>
+      <div><strong>LLM</strong><span>Claude 3.5 Sonnet via OpenRouter</span></div>
+      <div><strong>Local-first</strong><span>SQLite persistence and isolated sessions</span></div>
+    </div>
+  </header>
+
+  <section class="problem-strip">
+    <div class="problem-inner shell">
+      <strong>Problem</strong>
+      <p>Job pages vary by platform, authentication state, lazy-loaded content, and DOM structure. Reliable automation needs more than scraping: it needs orchestration, fallbacks, traceability, and idempotent persistence.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="workspace shell">
+      <div class="workspace-title">
+        <div>
+          <p class="eyebrow">System walkthrough</p>
+          <h2>From URL to auditable job record.</h2>
+        </div>
+        <p>The system combines deterministic browser logic with LLM-assisted extraction so model intelligence is used where structure is ambiguous, while execution remains observable and reproducible.</p>
+      </div>
+
+      <div class="app-shell">
+        <div class="app-bar">
+          <span>agent.run</span>
+          <span class="live">workflow online</span>
+        </div>
+        <div class="results">
+          <div class="metric-grid">
+            <div class="metric good"><span>Input</span><strong>Job URL</strong></div>
+            <div class="metric good"><span>Navigator</span><strong>Playwright</strong></div>
+            <div class="metric good"><span>Extractor</span><strong>LLM + rules</strong></div>
+            <div class="metric good"><span>Output</span><strong>Job record</strong></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><h3>Execution flow</h3><span>deterministic + AI-assisted</span></div>
+            <div class="source-list">
+              <div class="source-row"><span class="source-rank">01</span><div><strong>Canonicalize & detect</strong><br>Normalize URL, identify LinkedIn / Lever / Greenhouse / generic page.</div><span class="pill">routing</span></div>
+              <div class="source-row"><span class="source-rank">02</span><div><strong>Open browser session</strong><br>Load saved authentication state, handle login gates, expand lazy content.</div><span class="pill">browser</span></div>
+              <div class="source-row"><span class="source-rank">03</span><div><strong>Extract structured fields</strong><br>Use platform-aware selectors plus LLM fallback to recover title, company, location, and description.</div><span class="pill">LLM</span></div>
+              <div class="source-row"><span class="source-rank">04</span><div><strong>Normalize & fingerprint</strong><br>Create deterministic content hashes and idempotent job records.</div><span class="pill">integrity</span></div>
+              <div class="source-row"><span class="source-rank">05</span><div><strong>Persist evidence</strong><br>Store screenshots, HTML snapshots, structured output, and hash-linked audit events.</div><span class="pill">audit</span></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><h3>Artifacts per run</h3><span>traceable by run_id</span></div>
+            <div class="code-block">artifacts/{run_id}/
+├── audit.jsonl
+├── job_record.json
+├── screenshot.png
+├── raw.before.html
+├── raw.after.html
+└── placeholder.txt</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="architecture">
+      <div class="shell">
+        <p class="eyebrow">Architecture</p>
+        <h2>Production-minded agent design.</h2>
+        <div class="architecture-grid">
+          <article class="arch-card"><span>01 / ORCHESTRATION</span><h3>Navigator Agent</h3><p>Coordinates URL normalization, sessions, platform detection, content expansion, extraction, screenshots, and persistence.</p></article>
+          <article class="arch-card"><span>02 / TOOL USE</span><h3>Browser Layer</h3><p>Playwright provides browser navigation, DOM probing, lazy loading, authentication handling, and reproducible page capture.</p></article>
+          <article class="arch-card"><span>03 / REASONING</span><h3>LLM Extraction</h3><p>Claude 3.5 Sonnet via OpenRouter supplements deterministic selectors when page structure is incomplete or ambiguous.</p></article>
+          <article class="arch-card"><span>04 / RELIABILITY</span><h3>Audit + Storage</h3><p>SQLite, SHA-256 artifact hashes, and hash-chained audit events create traceability, integrity checks, and idempotent persistence.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research">
+      <div class="shell research-grid">
+        <div>
+          <p class="eyebrow">Engineering depth</p>
+          <h2>Built beyond a demo.</h2>
+        </div>
+        <div class="research-list">
+          <a href="https://github.com/ManishSudabattula/easyapplyai" target="_blank" rel="noreferrer">Source repository — Python application, CLI, configuration, tests ↗</a>
+          <a href="https://playwright.dev/python/" target="_blank" rel="noreferrer">Playwright — browser automation foundation ↗</a>
+          <a href="https://docs.pydantic.dev/" target="_blank" rel="noreferrer">Pydantic — structured data models and validation ↗</a>
+          <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer">SQLite — local persistence layer ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer shell">
+    <span>Manish Sudabattula · AI Engineer</span>
+    <a href="https://github.com/ManishSudabattula/easyapplyai" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+  </footer>
+</body>
+</html>
