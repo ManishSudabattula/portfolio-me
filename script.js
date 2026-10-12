@@ -3,57 +3,22 @@ const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
-// Keep the original portrait still; play a short hand-wave only when requested.
+// Original gentle floating motion and pointer tilt.
 const stage = document.querySelector('.portrait-stage');
-const greetButton = document.querySelector('.greet-button');
-const greeting = document.querySelector('.character-message');
-const sprite = document.querySelector('.character-animation');
-let spriteReady = false;
-let heroVisible = false;
-let greeted = false;
-let greetingTimer;
-function greet() {
-  if (!stage || !greeting) return;
-  clearTimeout(greetingTimer);
-  stage.classList.remove('is-greeting');
-  greeting.textContent = 'Hi! Thanks for stopping by.';
-  if (spriteReady && !motion.matches) {
-    void sprite.offsetWidth;
-    stage.classList.add('is-greeting');
-  }
-  greetingTimer = setTimeout(() => {
-    stage.classList.remove('is-greeting');
-    greeting.textContent = '';
-  }, 2200);
-}
-if (stage && greetButton && sprite) {
-  greetButton.hidden = false;
-  greetButton.addEventListener('click', greet);
-  const wave = new Image();
-  wave.src = 'assets/manish-wave.png';
-  wave.decode().then(() => {
-    sprite.style.backgroundImage = 'url("assets/manish-wave.png")';
-    spriteReady = true;
-    if (heroVisible && finePointer.matches && !motion.matches && !greeted) {
-      greeted = true;
-      greet();
-    }
-  }).catch(() => {
-    // The original portrait and greeting text still work if the optional asset fails.
+const character = document.querySelector('.portrait-still');
+if (stage && character) {
+  stage.addEventListener('pointermove', (event) => {
+    if (motion.matches || !finePointer.matches) return;
+    const bounds = stage.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    character.style.transform = `perspective(900px) rotateX(${-y * 5}deg) rotateY(${x * 7}deg)`;
   });
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver((entries) => {
-      heroVisible = entries[0].isIntersecting;
-      if (heroVisible && spriteReady && finePointer.matches && !motion.matches && !greeted) {
-        greeted = true;
-        greet();
-      }
-    }, { threshold: .5 }).observe(stage);
-  }
+  const reset = () => { character.style.transform = ''; };
+  stage.addEventListener('pointerleave', reset);
+  motion.addEventListener('change', reset);
+  finePointer.addEventListener('change', reset);
 }
-motion.addEventListener('change', () => {
-  if (motion.matches && stage) stage.classList.remove('is-greeting');
-});
 
 // Reveal effects never hide essential content before JavaScript or observation.
 if ('IntersectionObserver' in window) {
