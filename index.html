@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="styles.css"><script src="script.js" defer></script>
 </head>
 <body>
+<div class="reading-progress" aria-hidden="true"><span></span></div>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="header"><nav class="shell nav" aria-label="Primary navigation">
 <a class="brand" href="#top" aria-label="Manish Sudabattula home">MS<span aria-hidden="true">●</span></a>
@@ -15,24 +16,27 @@
 </nav></header>
 <main id="main">
 <section class="hero shell" id="top" aria-labelledby="hero-title">
-<div class="hero-topline"><span>SUPPLY CHAIN ANALYST</span><span><i class="location-dot" aria-hidden="true"></i>TAMPA, FL</span></div>
+<div class="hero-topline"><span class="role-label">Supply Chain Analyst</span><span><i class="location-dot" aria-hidden="true"></i>TAMPA, FL</span></div>
 <div class="hero-grid"><div class="hero-copy">
 <p class="intro">Hi, I’m Manish.</p><h1 id="hero-title">Making<br>every move<br><span class="red">matter.</span></h1>
 <p class="hero-description">I turn supply chain data into better decisions. From demand forecasts to the last mile, I connect the numbers to what happens next.</p>
 <div class="hero-actions"><a class="button" href="#impact">Explore my impact <span aria-hidden="true">↗</span></a><a class="underlink" href="assets/manish-sudabattula-resume.docx" download>Download résumé ↓</a></div>
 </div><div class="portrait-stage">
 <span class="portrait-label">THE PERSON BEHIND THE PROCESS</span><div class="portrait-disc" aria-hidden="true"></div>
-<div class="portrait-float"><div class="portrait-tilt"><img class="portrait" src="assets/manish-character.png" width="1024" height="1536" alt="Illustrated portrait of Manish with wavy black hair, a beard, and a red shirt." fetchpriority="high"></div></div>
+<div class="portrait-body"><div class="portrait-still"><img class="portrait" src="assets/manish-character.png" width="1024" height="1536" alt="Illustrated portrait of Manish with wavy black hair, a beard, and a red shirt." fetchpriority="high"></div></div>
+<div class="character-animation" aria-hidden="true"></div>
+<button class="greet-button" type="button" hidden>Say hello <span aria-hidden="true">✋</span></button>
+<p class="character-message" role="status" aria-live="polite"></p>
 <div class="portrait-note"><span class="note-star" aria-hidden="true">✳</span><span>A little curiosity.<br>A lot of follow-through.</span></div>
 <span class="portrait-caption">MANISH SUDABATTULA / V.01</span>
 </div></div>
 <div class="hero-bottom"><span>FORECAST. OPTIMIZE. DELIVER.</span><a href="#experience">Keep moving ↓</a></div>
 </section>
 <section class="metrics" aria-label="Selected professional results"><div class="shell metrics-grid">
-<div><strong>18<span>%</span></strong><p>Improved inventory turnover</p></div>
-<div><strong>22<span>%</span></strong><p>Improved forecasting accuracy</p></div>
-<div><strong>25<span>%</span></strong><p>Fewer stockouts</p></div>
-<div><strong>98<span>%</span></strong><p>On-time, in-full delivery</p></div>
+<div><strong>18<span>%</span></strong><p>Improved inventory turnover</p><a class="metric-link" href="#experience">Explore result ↗</a></div>
+<div><strong>22<span>%</span></strong><p>Improved forecasting accuracy</p><a class="metric-link" href="#forecasting">Explore result ↗</a></div>
+<div><strong>25<span>%</span></strong><p>Fewer stockouts</p><a class="metric-link" href="#inventory">Explore result ↗</a></div>
+<div><strong>98<span>%</span></strong><p>On-time, in-full delivery</p><a class="metric-link" href="#logistics">Explore result ↗</a></div>
 </div><p class="metrics-source shell">Selected results from my professional experience at FedEx, as reported in my résumé.</p></section>
 <section class="section shell" id="experience">
 <div class="section-heading"><p class="eyebrow">01 / EXPERIENCE</p><h2>Closer to the data.<br>Closer to the <span class="red">outcome.</span></h2></div>
@@ -42,22 +46,23 @@
 <h3>FedEx <span class="job-tag">CURRENT</span></h3><h4>Supply Chain Analyst</h4>
 <p>Cross-functional planning, inventory analysis, and ERP-enabled logistics across nationwide fulfillment operations.</p>
 <ul><li>Improved inventory turnover by 18% using SAP S/4HANA, SAP EWM, and Oracle ERP.</li><li>Built Power BI and Tableau dashboards for procurement, demand, and logistics KPIs, improving forecasting accuracy by 22%.</li><li>Automated replenishment across 30+ warehouses with SQL and PL/SQL, reducing stockouts by 25%.</li><li>Supported S&OP alignment and 98% OTIF delivery; automated reporting reduced manual effort by 40%.</li></ul>
-<div class="tags"><span>SAP S/4HANA</span><span>Power BI</span><span>SQL</span><span>S&OP</span></div>
+<div class="tags"><span>SAP S/4HANA</span><span>Power BI</span><span>SQL</span><span>S&OP</span></div><details class="role-details"><summary>More behind the role <span aria-hidden="true">+</span></summary><div><p>Integrated Manhattan WMS with SAP to improve pick-and-pack efficiency and reduce shipment errors by 15%.</p><p>Created BRDs, FRDs, and UML diagrams to translate operational needs into ERP enhancements and automation specifications.</p></div></details>
 </div></article>
 <article class="job"><div class="job-meta"><span class="job-number">02</span><p>JAN 2021 — JUL 2023</p><p>MUMBAI, INDIA</p></div><div class="job-content">
 <h3>Next Shippment LLP</h3><h4>Supply Chain Analyst</h4>
 <p>End-to-end supply chain operations spanning demand planning, procurement, inventory, and last-mile execution.</p>
 <ul><li>Developed R and Excel forecasting models, improving accuracy by 20% across five distribution centers.</li><li>Introduced replenishment strategies that reduced stockouts by 15%.</li><li>Automated route planning with SAP TM, reducing delivery costs and lead time variance by 12%.</li><li>Integrated vendor and shipment data in PostgreSQL, reducing delayed purchase order fulfillment by 17%.</li></ul>
-<div class="tags"><span>R & Excel</span><span>SAP ERP</span><span>PostgreSQL</span><span>Logistics</span></div>
+<div class="tags"><span>R & Excel</span><span>SAP ERP</span><span>PostgreSQL</span><span>Logistics</span></div><details class="role-details"><summary>More behind the role <span aria-hidden="true">+</span></summary><div><p>Conducted gap analysis, change impact assessments, and project planning for SAP upgrades.</p><p>Translated business requirements into technical specifications and Jira user stories, connecting operations and development teams through Agile delivery.</p></div></details>
 </div></article></div>
 </section>
 <section class="impact-section section" id="impact"><div class="shell">
 <div class="section-heading impact-heading"><div><p class="eyebrow">02 / PROFESSIONAL WORK HIGHLIGHTS</p><h2>Numbers with<br><span class="red">somewhere to go.</span></h2></div><p>A closer look at the work behind the results. Drawn from my professional experience.</p></div>
-<article class="impact-row"><div class="impact-visual forecast-art" aria-hidden="true"><div class="art-top">DEMAND / SIGNAL</div><div class="bar-chart"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:37%"></i><i style="--h:64%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:96%"></i></div><div class="art-bottom">ILLUSTRATIVE GRAPHIC <span>↗</span></div></div><div class="impact-copy"><p class="eyebrow">01 / PLAN WITH CLARITY</p><h3>Demand forecasting<br>& dashboards</h3><p>Turned procurement, demand, and logistics data into Power BI and Tableau dashboards that helped stakeholders track performance and plan with greater confidence.</p><div class="result"><strong>22%</strong><span>Improvement in forecasting accuracy<br>FedEx</span></div><div class="tags"><span>Power BI</span><span>Tableau</span><span>Demand planning</span></div></div></article>
-<article class="impact-row"><div class="impact-visual inventory-art" aria-hidden="true"><div class="art-top">INVENTORY / BALANCE</div><div class="box-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="art-bottom">ILLUSTRATIVE GRAPHIC <span>↔</span></div></div><div class="impact-copy"><p class="eyebrow">02 / KEEP THE RIGHT STOCK</p><h3>Smarter replenishment.<br>Fewer gaps.</h3><p>Automated replenishment triggers using SQL and PL/SQL across 30+ warehouses, balancing stock levels to minimize overstocking and reduce stockouts.</p><div class="result"><strong>25%</strong><span>Reduction in stockouts<br>FedEx</span></div><div class="tags"><span>SQL / PL/SQL</span><span>Inventory management</span><span>Automation</span></div></div></article>
-<article class="impact-row"><div class="impact-visual logistics-art" aria-hidden="true"><div class="art-top">LOGISTICS / FLOW</div><div class="route"><span>A</span><i></i><span>B</span><i></i><span>C</span></div><div class="art-bottom">ILLUSTRATIVE GRAPHIC <span>→</span></div></div><div class="impact-copy"><p class="eyebrow">03 / REMOVE THE FRICTION</p><h3>Better processes.<br>Better deliveries.</h3><p>Used Lean Six Sigma root cause analysis to identify bottlenecks and improve delivery reliability, alongside warehouse systems integration and cross-functional S&OP planning.</p><div class="result"><strong>12%</strong><span>Reduction in late deliveries<br>FedEx</span></div><div class="tags"><span>DMAIC</span><span>Manhattan WMS</span><span>S&OP</span></div></div></article>
+<article class="impact-row" id="forecasting"><div class="impact-visual forecast-art" aria-hidden="true"><div class="art-top">DEMAND / SIGNAL</div><div class="bar-chart"><i style="--h:28%"></i><i style="--h:45%"></i><i style="--h:37%"></i><i style="--h:64%"></i><i style="--h:59%"></i><i style="--h:82%"></i><i style="--h:96%"></i></div><div class="art-bottom">ILLUSTRATIVE GRAPHIC <span>↗</span></div></div><div class="impact-copy"><p class="eyebrow">01 / PLAN WITH CLARITY</p><h3>Demand forecasting<br>& dashboards</h3><p>Turned procurement, demand, and logistics data into Power BI and Tableau dashboards that helped stakeholders track performance and plan with greater confidence.</p><div class="result"><strong>22%</strong><span>Improvement in forecasting accuracy<br>FedEx</span></div><div class="tags"><span>Power BI</span><span>Tableau</span><span>Demand planning</span></div></div></article>
+<article class="impact-row" id="inventory"><div class="impact-visual inventory-art" aria-hidden="true"><div class="art-top">INVENTORY / BALANCE</div><div class="box-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="art-bottom">ILLUSTRATIVE GRAPHIC <span>↔</span></div></div><div class="impact-copy"><p class="eyebrow">02 / KEEP THE RIGHT STOCK</p><h3>Smarter replenishment.<br>Fewer gaps.</h3><p>Automated replenishment triggers using SQL and PL/SQL across 30+ warehouses, balancing stock levels to minimize overstocking and reduce stockouts.</p><div class="result"><strong>25%</strong><span>Reduction in stockouts<br>FedEx</span></div><div class="tags"><span>SQL / PL/SQL</span><span>Inventory management</span><span>Automation</span></div></div></article>
+<article class="impact-row" id="logistics"><div class="impact-visual logistics-art" aria-hidden="true"><div class="art-top">LOGISTICS / FLOW</div><div class="route"><span>A</span><i></i><span>B</span><i></i><span>C</span></div><div class="art-bottom">ILLUSTRATIVE GRAPHIC <span>→</span></div></div><div class="impact-copy"><p class="eyebrow">03 / REMOVE THE FRICTION</p><h3>Better processes.<br>Better deliveries.</h3><p>Used Lean Six Sigma root cause analysis to identify bottlenecks and improve delivery reliability, alongside warehouse systems integration and cross-functional S&OP planning.</p><div class="result"><strong>12%</strong><span>Reduction in late deliveries<br>FedEx</span></div><div class="tags"><span>DMAIC</span><span>Manhattan WMS</span><span>S&OP</span></div></div></article>
 </div></section>
 <section class="section shell" id="skills"><div class="section-heading"><p class="eyebrow">03 / THE TOOLKIT</p><h2>Business context.<br>Technical <span class="red">depth.</span></h2></div>
+<div class="expertise-explorer" hidden><p class="explorer-label" id="explorer-label">Explore how my skills connect to the work</p><div class="expertise-controls" role="group" aria-labelledby="explorer-label"><button type="button" data-focus="planning" aria-pressed="true">Planning & operations</button><button type="button" data-focus="analytics" aria-pressed="false">Analytics & code</button><button type="button" data-focus="systems" aria-pressed="false">Enterprise systems</button><button type="button" data-focus="business" aria-pressed="false">Business analysis</button></div><div class="expertise-story" aria-live="polite" aria-atomic="true"><span class="story-label">FROM SKILL TO IMPACT</span><h3 id="expertise-title">Planning that reaches the warehouse.</h3><p id="expertise-description">Demand planning, replenishment, and S&OP helped align inventory decisions across 30+ warehouses and support a 98% OTIF delivery rate at FedEx.</p><a class="underlink" id="expertise-link" href="#inventory">Explore the work ↗</a></div></div>
 <div class="skills-grid"><article><span class="skill-index">01</span><h3>Planning & operations</h3><p>Demand forecasting · S&OP · Replenishment planning · Strategic sourcing · Procurement · Inventory management · Logistics · Lean Six Sigma</p></article><article><span class="skill-index">02</span><h3>Analytics & code</h3><p>SQL · PL/SQL · Python · R · PySpark · Power BI · Tableau · Advanced Excel · VBA · SQL Server · PostgreSQL · Oracle · BigQuery</p></article><article><span class="skill-index">03</span><h3>Enterprise systems</h3><p>SAP S/4HANA · SAP ERP · IBP · SD · MM · EWM · TM · LE · Oracle ERP · Manhattan WMS</p></article><article><span class="skill-index">04</span><h3>Business analysis</h3><p>Gap & impact analysis · BRDs & FRDs · UML · Use case modeling · User stories · Jira · Agile · Git · Azure DevOps · Project planning</p></article></div>
 <div class="education"><div><p class="eyebrow">FOUNDATIONS</p><h3>Always building<br>on what I know.</h3></div><div class="education-list">
 <article><span>01 / EDUCATION</span><h4>Master of Science, Computer Science</h4><p>University of South Florida · Tampa, FL</p></article>
@@ -68,6 +73,7 @@
 <div class="contact-top"><p class="eyebrow">04 / NEXT MOVE</p><span>TAMPA, FL ↗</span></div><h2>Let’s move<br><span>things forward.</span></h2>
 <p class="contact-intro">Have a supply chain challenge or a role where analytics meets operations? Let’s talk.</p>
 <a class="contact-email" href="mailto:sudabattulam26@gmail.com">sudabattulam26@gmail.com <span aria-hidden="true">↗</span></a>
+<div class="email-actions"><button type="button" id="copy-email" hidden>Copy email <span aria-hidden="true">↗</span></button><span id="copy-status" role="status" aria-live="polite"></span></div>
 <div class="contact-links"><a href="https://www.linkedin.com/in/manishsudabattula02" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/ManishSudabattula" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="assets/manish-sudabattula-resume.docx" download>Download résumé ↓</a></div>
 <footer><span>© <span id="year">2026</span> Manish Sudabattula</span><span>BUILT WITH PURPOSE / V.01</span><a href="#top">Back to top ↑</a></footer>
 </div></section>
