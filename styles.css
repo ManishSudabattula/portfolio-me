@@ -970,15 +970,8 @@ button:focus-visible, summary:focus-visible { outline: 3px solid var(--red); out
 .job-tag { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 700; }
 .art-top, .art-bottom, .education-list article > span, .portrait-caption { font-size: 10px; }
 .hero-copy { animation: editorial-in .65s both; }
-.portrait-body { position: absolute; inset: 0; }
-.portrait-still { height: 100%; }
-.character-animation { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; aspect-ratio: 2 / 3; max-width: 100%; background-size: 300% 200%; background-repeat: no-repeat; opacity: 0; pointer-events: none; clip-path: inset(0 0 0 2%); }
-.portrait-stage.is-greeting .portrait { visibility: hidden; }
-.portrait-stage.is-greeting .character-animation { opacity: 1; animation: character-wave .96s steps(1, end) 2; }
-.greet-button { position: absolute; right: 8px; bottom: 32px; min-height: 44px; border: 1px solid var(--black); background: var(--cream); padding: 10px 14px; border-radius: 30px; font-size: 12px; font-weight: 700; box-shadow: 3px 3px 0 var(--black); transition: background .2s; }
-.greet-button:hover { background: var(--khaki); }
-.character-message { position: absolute; top: -44px; left: 70px; right: 70px; margin: 0; padding: 0; font-size: 12px; font-weight: 700; text-align: center; pointer-events: none; }
-.character-message:not(:empty) { background: var(--cream); border: 1px solid var(--black); border-radius: 30px; padding: 10px 16px; }
+.portrait-body { position: absolute; inset: 0; animation: character-float 5s ease-in-out infinite; }
+.portrait-still { height: 100%; transition: transform .3s ease-out; }
 .metrics-grid > div { position: relative; transition: background .25s; }
 .metrics-grid > div:hover { background: rgba(246,239,210,.05); }
 .metric-link { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; font-size: 11px; margin-top: 5px; text-decoration: underline; text-underline-offset: 4px; }
@@ -1019,19 +1012,11 @@ button:focus-visible, summary:focus-visible { outline: 3px solid var(--red); out
 @keyframes grow-bar { from { transform: scaleY(.08); } to { transform: scaleY(1); } }
 @keyframes settle-box { from { opacity: .3; transform: scale(.9); } to { opacity: 1; transform: scale(1); } }
 @keyframes route-signal { from { left: 0; } to { left: calc(100% - 6px); } }
-@keyframes character-wave {
-  0% { background-position: 0% 0%; }
-  16.667% { background-position: 50% 0%; }
-  33.334% { background-position: 100% 0%; }
-  50% { background-position: 50% 0%; }
-  66.667% { background-position: 100% 0%; }
-  83.334%, 100% { background-position: 0% 0%; }
-}
+
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1.1fr 1fr; }
   .hero-topline { font-size: 11px; }
   .portrait-note { bottom: 10px; }
-  .greet-button { bottom: 65px; right: 0; }
 }
 @media (max-width: 700px) {
   :root { --header-height: 106px; }
@@ -1045,8 +1030,6 @@ button:focus-visible, summary:focus-visible { outline: 3px solid var(--red); out
   h2 { font-size: clamp(35px, 9.7vw, 43px); }
   .portrait-stage { height: clamp(340px, 110vw, 440px); margin-top: 20px; }
   .portrait-label { font-size: 9px; top: 90px; }
-  .greet-button { top: 14px; right: 8px; bottom: auto; }
-  .character-message { top: -34px; left: 10px; right: 32px; font-size: 11px; }
   .portrait-note { left: 0; bottom: 15px; }
   .portrait-caption { font-size: 9px; }
   .eyebrow { font-size: 11px; }
@@ -1062,7 +1045,9 @@ button:focus-visible, summary:focus-visible { outline: 3px solid var(--red); out
   .job h3 { overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .portrait-stage.is-greeting .portrait { visibility: visible; }
-  .portrait-stage.is-greeting .character-animation { opacity: 0; }
   .impact-row.is-revealed .route i::after { display: none; }
 }
+
+@keyframes character-float { 50% { transform: translateY(-9px); } }
+@media (hover: none), (pointer: coarse) { .portrait-body { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .portrait-still { transform: none !important; } }
