@@ -940,7 +940,7 @@ footer a {
 
 .brand span { color: var(--red); }
 
-/* V1 refinements: one type family, grounded character, and accessible interactions. */
+/* Typography, character motion, and accessible interactions. */
 :root { --header-height: 86px; }
 html { scroll-padding-top: calc(var(--header-height) + 24px); }
 body { overflow-wrap: break-word; }
